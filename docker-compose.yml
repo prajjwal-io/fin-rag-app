@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/financial_research_db
+    env_file:
+      - .env
+    depends_on:
+      - mongodb
+
+  ui:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    command: streamlit run app/ui/streamlit_app.py
+    ports:
+      - "8501:8501"
+    environment:
+      - API_URL=http://api:8000
+    env_file:
+      - .env
+    depends_on:
+      - api
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data: 
