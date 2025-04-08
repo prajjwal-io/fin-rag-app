@@ -1,19 +1,33 @@
-fastapi==0.104.1
-uvicorn==0.24.0
-streamlit==1.28.1
-pymongo==4.6.0
-python-dotenv==1.0.0
-openai==1.3.0
-pinecone-client==2.2.4
-spacy==3.7.2
-textblob==0.17.1
+fastapi==0.110.0
+uvicorn==0.27.1
+pydantic==2.6.1
+langchain==0.1.9
+langchain-openai==0.0.5
+pinecone-client==3.0.2
+pandas==2.2.0
+numpy==1.26.3
+python-dotenv==1.0.1
+beautifulsoup4==4.12.2
 nltk==3.8.1
-yfinance==0.2.33
-python-multipart==0.0.6
-pytest==7.4.3
-httpx==0.25.1
-python-jose==3.3.0
-passlib==1.7.4
-bcrypt==4.0.1
-pydantic==2.4.2
-pydantic-settings==2.0.3 
+requests==2.31.0
+aiohttp==3.9.3
+motor==3.3.2
+pymongo==4.6.1
+
+# For financial NLP
+textblob==0.17.1
+yfinance==0.2.35
+sec-edgar-downloader==4.3.0
+spacy==3.7.2
+
+# For PDF and document processing
+pypdf==4.0.1
+docx2txt==0.8
+pytesseract==0.3.10
+
+# For frontend minimal app
+streamlit==1.31.1
+
+# For testing
+pytest==7.4.4
+pytest-asyncio==0.23.5
